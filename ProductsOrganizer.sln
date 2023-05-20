@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsOrganizer.Web", "ProductsOrganizer.Web\ProductsOrganizer.Web.csproj", "{1AC6B5C3-BB4D-42FD-87C2-4A2468F224EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsOrganizer.Domain", "ProductsOrganizer.Domain\ProductsOrganizer.Domain.csproj", "{F9BD41AA-3A43-4D39-9916-B7BB674B0DE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsOrganizer.Persistence", "ProductsOrganizer.Persistence\ProductsOrganizer.Persistence.csproj", "{DEAD1BCC-9A3E-427F-9CDD-18D9572D8EAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{1AC6B5C3-BB4D-42FD-87C2-4A2468F224EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AC6B5C3-BB4D-42FD-87C2-4A2468F224EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AC6B5C3-BB4D-42FD-87C2-4A2468F224EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9BD41AA-3A43-4D39-9916-B7BB674B0DE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9BD41AA-3A43-4D39-9916-B7BB674B0DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9BD41AA-3A43-4D39-9916-B7BB674B0DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9BD41AA-3A43-4D39-9916-B7BB674B0DE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEAD1BCC-9A3E-427F-9CDD-18D9572D8EAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEAD1BCC-9A3E-427F-9CDD-18D9572D8EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEAD1BCC-9A3E-427F-9CDD-18D9572D8EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEAD1BCC-9A3E-427F-9CDD-18D9572D8EAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
