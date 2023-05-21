@@ -13,12 +13,14 @@ import { MatButtonModule } from "@angular/material/button";
 import { CreateOrUpdateProductComponent } from './products/create-or-update-product/create-or-update-product.component';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
+import { MatPaginatorModule } from "@angular/material/paginator";
 
 const MATERIAL = [
   MatTableModule,
   MatButtonModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatPaginatorModule
 ]
 
 @NgModule({

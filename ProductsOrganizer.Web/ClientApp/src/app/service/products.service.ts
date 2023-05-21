@@ -12,7 +12,7 @@ export class ProductsService {
     this.apiEndpoint = baseUrl + 'api/products';
   }
 
-  getProducts(skip: number = 0, take: number = 5): Observable<Product[]> {
+  getProducts(skip: number, take: number): Observable<Product[]> {
     let params = new HttpParams();
     params = params.set('skip', skip.toString());
     params = params.set('take', take.toString());
@@ -33,5 +33,9 @@ export class ProductsService {
 
   createProduct(request: CreateProductRequest): Observable<Product> {
     return this.http.post<Product>(`${this.apiEndpoint}`, request);
+  }
+
+  getProductsCount(): Observable<number> {
+    return this.http.get<number>(`${this.apiEndpoint}/count`);
   }
 }

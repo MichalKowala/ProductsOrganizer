@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/model/product';
 import { ProductsService } from "../../service/products.service";
 import { ToastrService } from "ngx-toastr";
-import { catchError, EMPTY, switchMap, tap } from "rxjs";
+import { catchError, EMPTY, forkJoin, switchMap, tap } from "rxjs";
 import { Router } from "@angular/router";
 
 @Component({
@@ -13,24 +13,29 @@ import { Router } from "@angular/router";
 export class ProductsBrowserComponent implements OnInit {
   columnsToDisplay: string[] = ['code', 'name','description', 'price', 'actions'];
   products: Product[] = [];
+  totalProductsCount: number; //used by paginator
+
   skip: number = 0;
-  take: number = 10;
+  pageSize: number = 10;
+
   constructor(
     private productsService: ProductsService,
     private toastrService: ToastrService,
-    private router: Router
+    private router: Router,
+    private cdr: ChangeDetectorRef
   ) {
   }
 
   ngOnInit(): void {
-    this.productsService.getProducts(this.skip,this.take).subscribe({
-      next: (products) => {
+    forkJoin([
+      this.productsService.getProductsCount(),
+      this.productsService.getProducts(this.skip, this.pageSize)
+    ]).subscribe({
+      next: (([count, products]) => {
+        this.totalProductsCount = count;
         this.products = products;
-      },
-      error: (err) => {
-        console.error(err);
-      }
-    });
+      })
+    })
   }
 
   removeProduct(productId: string) {
@@ -43,7 +48,7 @@ export class ProductsBrowserComponent implements OnInit {
         tap(_ => {
           this.toastrService.success('Product has been deleted');
         }),
-        switchMap(_ => this.productsService.getProducts(this.skip, this.take))
+        switchMap(_ => this.productsService.getProducts(this.skip, this.pageSize))
       ).subscribe({
         next: (products) => {
           this.products = products;
@@ -58,5 +63,15 @@ export class ProductsBrowserComponent implements OnInit {
     } else {
       this.router.navigate(['products', 'new']);
     }
+  }
+
+  onPaginatorClicked(event: any) {
+    this.skip = this.pageSize * event.pageIndex;
+    this.productsService.getProducts(this.skip, this.pageSize).subscribe({
+      next: (products) => {
+        this.products = products;
+        this.cdr.markForCheck();
+      }
+    })
   }
 }
