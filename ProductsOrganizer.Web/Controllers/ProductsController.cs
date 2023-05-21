@@ -35,4 +35,18 @@ public class ProductsController : ControllerBase
         await mediator.Send(new DeleteProductRequest {Id = id});
         return Ok(NoContent());
     }
+
+    [HttpPut("{id:guid}")]
+    public async Task<IActionResult> UpdateProduct(Guid id, UpdateProductRequest request)
+    {
+        var result = await mediator.Send(request with {Id = id});
+        return Ok(result);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateProduct(CreateProductRequest request)
+    {
+        var result = await mediator.Send(request);
+        return Ok(result);
+    }
 }

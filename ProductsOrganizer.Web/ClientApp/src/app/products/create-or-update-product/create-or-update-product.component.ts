@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { filter, map, Subject, switchMap, takeUntil } from "rxjs";
 import { ProductsService } from "../../service/products.service";
-import { Product } from "../../model/product";
+import { CreateProductRequest, Product, UpdateProductRequest } from "../../model/product";
 import { ToastrService } from "ngx-toastr";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
 
@@ -27,7 +27,8 @@ export class CreateOrUpdateProductComponent implements OnInit {
     private route: ActivatedRoute,
     private productsService: ProductsService,
     private fb: FormBuilder,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {
   }
 
@@ -51,7 +52,48 @@ export class CreateOrUpdateProductComponent implements OnInit {
     if (!this.formGroup.valid) {
       return;
     }
+    if (this.product?.id) {
+      this.updateProduct();
+      return;
+    }
+    this.createProduct();
+  }
 
+  private createProduct() {
+    this.productsService.createProduct(this.getCreateProductRequest()).subscribe({
+      next: (_) => {
+        this.toastr.success('Product has been created');
+        this.router.navigate(['products']);
+      }
+    })
+  }
+
+  private getCreateProductRequest(): CreateProductRequest {
+    return {
+      code: this.formGroup.controls.code.value!,
+      name: this.formGroup.controls.name.value!,
+      description: this.formGroup.controls.description.value!,
+      price: this.formGroup.controls.price.value!
+    };
+  }
+
+  private updateProduct() {
+    this.productsService.updateProduct(this.getUpdateProductRequest()).subscribe({
+      next: (_) => {
+        this.toastr.success('Product has been updated');
+        this.router.navigate(['products']);
+      }
+    })
+  }
+
+  private getUpdateProductRequest(): UpdateProductRequest {
+    return {
+      id: this.product.id,
+      code: this.formGroup.controls.code.value!,
+      name: this.formGroup.controls.name.value!,
+      description: this.formGroup.controls.description.value!,
+      price: this.formGroup.controls.price.value!
+    };
   }
 
   private patchForm() {

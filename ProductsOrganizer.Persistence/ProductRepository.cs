@@ -44,4 +44,16 @@ public class ProductRepository : IProductRepository
             throw new Exception("Product not found");
         fakeContext.Remove(productToRemove);
     }
+
+    public async Task UpdateProductAsync(Product product)
+    {
+        await Task.Delay(50);
+        //Computer: updating  *beep boop*
+    }
+    
+    public async Task AddProductAsync(Product product)
+    {
+        await Task.Delay(50);
+        fakeContext.Add(product);
+    }
 }
