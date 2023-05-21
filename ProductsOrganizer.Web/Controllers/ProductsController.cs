@@ -6,7 +6,7 @@ using ProductsOrganizer.Web.Products.Queries;
 namespace ProductsOrganizer.Web.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/products")]
 public class ProductsController : ControllerBase
 {
     private readonly IMediator mediator;

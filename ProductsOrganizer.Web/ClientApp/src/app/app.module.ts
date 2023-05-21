@@ -9,7 +9,12 @@ import { ProductsBrowserComponent } from './products/products-browser/products-b
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from "@angular/material/table";
 import { ToastrModule } from "ngx-toastr";
+import { MatButtonModule } from "@angular/material/button";
 
+const MATERIAL = [
+  MatTableModule,
+  MatButtonModule
+]
 
 @NgModule({
   declarations: [
@@ -21,12 +26,14 @@ import { ToastrModule } from "ngx-toastr";
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    MatTableModule,
     RouterModule.forRoot([
-      { path: '', component: ProductsBrowserComponent}
+      { path: '', redirectTo: 'products', pathMatch: 'full'},
+      { path: 'products', component: ProductsBrowserComponent },
+      { path: '**', redirectTo: 'products' }
     ]),
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    ...MATERIAL
   ],
   providers: [],
   bootstrap: [AppComponent]

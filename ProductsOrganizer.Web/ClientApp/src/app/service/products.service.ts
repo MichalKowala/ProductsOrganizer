@@ -9,7 +9,7 @@ import { Observable } from "rxjs";
 export class ProductsService {
   apiEndpoint :string;
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    this.apiEndpoint = baseUrl + 'products';
+    this.apiEndpoint = baseUrl + 'api/products';
   }
 
   getRange(skip: number = 0, take: number = 5): Observable<Product[]> {
