@@ -8,6 +8,7 @@ public record ProductDto
     public string Code { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
+    public decimal Price { get; set; }
     public DateTime DateCreated { get; set; }
     
     public ProductDto(Product model)
@@ -16,6 +17,7 @@ public record ProductDto
         Code = model.Code;
         Name = model.Name;
         Description = model.Description;
+        Price = model.Price;
         DateCreated = model.DateCreated;
     }
 }

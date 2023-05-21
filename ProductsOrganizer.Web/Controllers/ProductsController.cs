@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ProductsOrganizer.Domain;
-using ProductsOrganizer.Web.Products.Model;
+using ProductsOrganizer.Web.Products.Commands;
 using ProductsOrganizer.Web.Products.Queries;
 
 namespace ProductsOrganizer.Web.Controllers;
@@ -21,5 +20,12 @@ public class ProductsController : ControllerBase
     {
         var result = await mediator.Send(new GetProductsRequest {Skip = skip, Take = take});
         return Ok(result);
+    }
+
+    [HttpDelete("{id:guid}")]
+    public async Task<IActionResult> DeleteProduct(Guid id)
+    {
+        await mediator.Send(new DeleteProductRequest {Id = id});
+        return Ok(NoContent());
     }
 }

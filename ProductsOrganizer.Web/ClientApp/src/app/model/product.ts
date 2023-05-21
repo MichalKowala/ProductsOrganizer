@@ -3,5 +3,5 @@
   code: string;
   name: string;
   description: string;
-  pricePln: number;
+  price: number;
 }

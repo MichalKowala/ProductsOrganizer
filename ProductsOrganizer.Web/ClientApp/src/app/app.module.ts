@@ -6,6 +6,9 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsBrowserComponent } from './products/products-browser/products-browser.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from "@angular/material/table";
+import { ToastrModule } from "ngx-toastr";
 
 
 @NgModule({
@@ -18,10 +21,12 @@ import { ProductsBrowserComponent } from './products/products-browser/products-b
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    MatTableModule,
     RouterModule.forRoot([
-      // { path: '', component: HomeComponent },
       { path: '', component: ProductsBrowserComponent}
-    ])
+    ]),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

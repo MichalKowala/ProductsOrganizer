@@ -26,4 +26,13 @@ public class ProductRepository : IProductRepository
         await Task.Delay(50);
         return fakeContext.Skip(skip).Take(take);
     }
+
+    public async Task DeleteProduct(Guid productId)
+    {
+        await Task.Delay(50);
+        var productToRemove = fakeContext.FirstOrDefault(x => x.Id == productId);
+        if (productToRemove is null)
+            throw new Exception("Product not found");
+        fakeContext.Remove(productToRemove);
+    }
 }
