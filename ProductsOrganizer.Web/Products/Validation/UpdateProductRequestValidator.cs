@@ -13,8 +13,8 @@ public class UpdateProductRequestValidator : AbstractValidator<CreateProductRequ
             .WithMessage("Code must be exactly 5 letters log");
 
         RuleFor(x => x.Description)
-            .MaximumLength(150)
-            .WithMessage("Description maximum length is 150 characters");
+            .MaximumLength(240)
+            .WithMessage("Description maximum length is 240 characters");
 
         RuleFor(x => x.Name)
             .NotEmpty()

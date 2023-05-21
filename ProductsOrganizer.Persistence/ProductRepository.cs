@@ -40,14 +40,14 @@ public class ProductRepository : IProductRepository
             Code = "BBBDD",
             Name = "Coffee grinder",
             Description = "Sed convallis dui ut euismod tristique. Cras pharetra consectetur lacus, non vestibulum tellus sagittis sed. Donec sodales imperdiet turpis nec interdum.",
-            Price = 12356.23M
+            Price = 156.23M
         },
         new Product()
         {
             Code = "12352",
             Name = "Electric toothbrush",
             Description = "Vivamus condimentum, augue vitae maximus viverra, massa est varius est, ut suscipit dolor nulla at erat. Sed nec dignissim diam. Vivamus quis risus in augue ullamcorper auctor",
-            Price = 622312
+            Price = 6312
         },
         new Product()
         {
@@ -68,35 +68,35 @@ public class ProductRepository : IProductRepository
             Code = "REWQS",
             Name = "iPhone 12",
             Description = "Cras nec lacus at lectus finibus suscipit vel quis dolor. Integer ac orci aliquet, dapibus dolor aliquam, euismod risus. Donec hendrerit, ligula vel suscipit dignissim, nunc augue gravida leo, a elementum nulla arcu nec urna. ",
-            Price = 55553.6M
+            Price = 553.6M
         },
         new Product()
         {
             Code = "REWQS",
             Name = "google pixel6",
             Description = "Cras nec lacus at lectus finibus suscipit vel quis dolor. Integer ac orci aliquet, dapibus dolor aliquam, euismod risus. Donec hendrerit, ligula vel suscipit dignissim, nunc augue gravida leo, a elementum nulla arcu nec urna. ",
-            Price = 55553.6M
+            Price = 553.6M
         },
         new Product()
         {
             Code = "AGQWS",
             Name = "some other phone",
             Description = "Integer ac orci aliquet, dapibus dolor aliquam, euismod risus. Donec hendrerit, ligula vel suscipit dignissim, nunc augue gravida leo, a elementum nulla arcu nec urna. ",
-            Price = 55553.6M
+            Price = 123.6M
         },
         new Product()
         {
             Code = "BBBBB",
             Name = "and another phone",
             Description = "Cras nec lacus at lectus finibus suscipit vel quis dolor. Integer ac orci aliquet, dapibus dolor aliquam, euismod risus. Donec hendrerit, ligula vel suscipit dignissim, nunc augue gravida leo, a elementum nulla arcu nec urna. ",
-            Price = 55553.6M
+            Price = 53.6M
         },
         new Product()
         {
             Code = "CCCCC",
             Name = "and one more phone",
             Description = "Cras nec lacus at lectus finibus suscipit vel quis dolor. Integer ac orci aliquet, dapibus dolor aliquam, euismod risus. Donec hendrerit, ligula vel suscipit dignissim, nunc augue gravida leo, a elementum nulla arcu nec urna. ",
-            Price = 55553.6M
+            Price = 553.6M
         },
         new Product()
         {
@@ -111,64 +111,7 @@ public class ProductRepository : IProductRepository
             Name = "Some product 2",
             Description = "Sed convallis dui ut euismod tristique. Cras pharetra consectetur lacus, non vestibulum tellus sagittis sed. Donec sodales imperdiet turpis nec interdum.",
             Price = 20
-        },
-        new Product()
-        {
-            Code = "P1003",
-            Name = "Some product 3",
-            Description = "Some description 3",
-            Price = 30
-        },
-        new Product()
-        {
-            Code = "P1004",
-            Name = "Some product 4",
-            Description = "Some description 4",
-            Price = 40
-        },
-        new Product()
-        {
-            Code = "P1005",
-            Name = "Some product 5",
-            Description = "Sed convallis dui ut euismod tristique. Cras pharetra consectetur lacus, non vestibulum tellus sagittis sed. Donec sodales imperdiet turpis nec interdum.",
-            Price = 50
-        },
-        new Product()
-        {
-            Code = "P1006",
-            Name = "Some product 6",
-            Description = "Some description 6",
-            Price = 60
-        },
-        new Product()
-        {
-            Code = "P1001",
-            Name = "Some product 1",
-            Description = "Some description 1",
-            Price = 10
-        },
-        new Product()
-        {
-            Code = "P1001",
-            Name = "Some product 1",
-            Description = "Some description 1",
-            Price = 10
-        },
-        
-        new Product()
-        {
-            Code = "P1001",
-            Name = "Some product 1",
-            Description = "Sed convallis dui ut euismod tristique. Cras pharetra consectetur lacus, non vestibulum tellus sagittis sed. Donec sodales imperdiet turpis nec interdum.",
-            Price = 10
-        },
-        new Product()
-        {
-            Code = "P1001",
-            Name = "Some product 1",
-            Description = "Some description 1",
-            Price = 10
-        },
+        }
     };
     
     public async Task<IEnumerable<Product>> GetProductsAsync(int take, int skip)

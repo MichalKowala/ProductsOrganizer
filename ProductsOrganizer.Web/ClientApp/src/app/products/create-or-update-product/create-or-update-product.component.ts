@@ -19,7 +19,7 @@ export class CreateOrUpdateProductComponent implements OnInit {
   formGroup = this.fb.group({
     code: new FormControl<string>('', {validators: [Validators.required, Validators.maxLength(5), Validators.minLength(5)]}),
     name: new FormControl<string>('', {validators: [Validators.required, Validators.maxLength(40), Validators.minLength(8)]}),
-    description: new FormControl<string>('', {validators: Validators.maxLength(150)}),
+    description: new FormControl<string>('', {validators: Validators.maxLength(240)}),
     price: new FormControl<number | null>(null, {validators: [Validators.required, Validators.min(1)]})
   });
 
@@ -57,6 +57,10 @@ export class CreateOrUpdateProductComponent implements OnInit {
       return;
     }
     this.createProduct();
+  }
+
+  redirectToProductBrowser() {
+    this.router.navigate(['browser']);
   }
 
   private createProduct() {
