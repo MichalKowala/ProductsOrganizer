@@ -23,7 +23,7 @@ public class ProductRepository : IProductRepository
     
     public async Task<IEnumerable<Product>> GetProductsAsync(int take, int skip)
     {
-        await Task.Delay(50);
+        await Task.Delay(50); //delay to simulate the asynchrony of a real repository
         return fakeContext.Skip(skip).Take(take);
     }
 
