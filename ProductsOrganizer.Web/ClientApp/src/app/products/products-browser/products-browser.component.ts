@@ -51,6 +51,7 @@ export class ProductsBrowserComponent implements OnInit {
         switchMap(_ => this.productsService.getProducts(this.skip, this.pageSize))
       ).subscribe({
         next: (products) => {
+          this.totalProductsCount--;
           this.products = products;
         }
       })

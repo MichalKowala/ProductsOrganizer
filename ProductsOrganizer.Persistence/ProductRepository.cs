@@ -59,7 +59,7 @@ public class ProductRepository : IProductRepository
         new Product()
         {
             Code = "REWQS",
-            Name = "iPhone 12",
+            Name = "Samsung s6",
             Description = "Cras nec lacus at lectus finibus suscipit vel quis dolor. Integer ac orci aliquet, dapibus dolor aliquam, euismod risus. Donec hendrerit, ligula vel suscipit dignissim, nunc augue gravida leo, a elementum nulla arcu nec urna. ",
             Price = 55553.6M
         },
@@ -73,34 +73,34 @@ public class ProductRepository : IProductRepository
         new Product()
         {
             Code = "REWQS",
-            Name = "iPhone 12",
+            Name = "google pixel6",
             Description = "Cras nec lacus at lectus finibus suscipit vel quis dolor. Integer ac orci aliquet, dapibus dolor aliquam, euismod risus. Donec hendrerit, ligula vel suscipit dignissim, nunc augue gravida leo, a elementum nulla arcu nec urna. ",
             Price = 55553.6M
         },
         new Product()
         {
-            Code = "REWQS",
-            Name = "iPhone 12",
+            Code = "AGQWS",
+            Name = "some other phone",
+            Description = "Integer ac orci aliquet, dapibus dolor aliquam, euismod risus. Donec hendrerit, ligula vel suscipit dignissim, nunc augue gravida leo, a elementum nulla arcu nec urna. ",
+            Price = 55553.6M
+        },
+        new Product()
+        {
+            Code = "BBBBB",
+            Name = "and another phone",
             Description = "Cras nec lacus at lectus finibus suscipit vel quis dolor. Integer ac orci aliquet, dapibus dolor aliquam, euismod risus. Donec hendrerit, ligula vel suscipit dignissim, nunc augue gravida leo, a elementum nulla arcu nec urna. ",
             Price = 55553.6M
         },
         new Product()
         {
-            Code = "REWQS",
-            Name = "iPhone 12",
+            Code = "CCCCC",
+            Name = "and one more phone",
             Description = "Cras nec lacus at lectus finibus suscipit vel quis dolor. Integer ac orci aliquet, dapibus dolor aliquam, euismod risus. Donec hendrerit, ligula vel suscipit dignissim, nunc augue gravida leo, a elementum nulla arcu nec urna. ",
             Price = 55553.6M
         },
         new Product()
         {
-            Code = "REWQS",
-            Name = "iPhone 12",
-            Description = "Cras nec lacus at lectus finibus suscipit vel quis dolor. Integer ac orci aliquet, dapibus dolor aliquam, euismod risus. Donec hendrerit, ligula vel suscipit dignissim, nunc augue gravida leo, a elementum nulla arcu nec urna. ",
-            Price = 55553.6M
-        },
-        new Product()
-        {
-            Code = "P1001",
+            Code = "DDDDD",
             Name = "Some product 1",
             Description = "Some description 1",
             Price = 10
@@ -109,7 +109,7 @@ public class ProductRepository : IProductRepository
         {
             Code = "P1002",
             Name = "Some product 2",
-            Description = "Some description 2",
+            Description = "Sed convallis dui ut euismod tristique. Cras pharetra consectetur lacus, non vestibulum tellus sagittis sed. Donec sodales imperdiet turpis nec interdum.",
             Price = 20
         },
         new Product()
@@ -130,7 +130,7 @@ public class ProductRepository : IProductRepository
         {
             Code = "P1005",
             Name = "Some product 5",
-            Description = "Some description 5",
+            Description = "Sed convallis dui ut euismod tristique. Cras pharetra consectetur lacus, non vestibulum tellus sagittis sed. Donec sodales imperdiet turpis nec interdum.",
             Price = 50
         },
         new Product()
@@ -159,7 +159,7 @@ public class ProductRepository : IProductRepository
         {
             Code = "P1001",
             Name = "Some product 1",
-            Description = "Some description 1",
+            Description = "Sed convallis dui ut euismod tristique. Cras pharetra consectetur lacus, non vestibulum tellus sagittis sed. Donec sodales imperdiet turpis nec interdum.",
             Price = 10
         },
         new Product()

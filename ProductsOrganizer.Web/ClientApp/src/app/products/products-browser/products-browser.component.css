@@ -1,0 +1,54 @@
+.products-table {
+  border-radius: 20px;
+}
+
+.products-table .mat-column-code,
+.products-table .mat-column-name,
+.products-table .mat-column-description,
+.products-table .mat-column-price {
+  border-right: 1px solid white;
+}
+
+.products-table td, .products-table th {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.products-table th {
+  border-bottom: 1px solid white;
+}
+
+.content {
+  padding-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.paginator {
+  width: 100%;
+}
+
+.create-button {
+  margin-top: 2rem;
+}
+
+.actions-cell-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.delete-link {
+  color: red;
+}
+
+.edit-link {
+  color: green;
+}
+
+.delete-link, .edit-link {
+  cursor: pointer;
+}
