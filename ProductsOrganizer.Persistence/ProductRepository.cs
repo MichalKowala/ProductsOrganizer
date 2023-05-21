@@ -21,13 +21,22 @@ public class ProductRepository : IProductRepository
         }
     };
     
-    public async Task<IEnumerable<Product>> GetRange(int take, int skip)
+    public async Task<IEnumerable<Product>> GetProductsAsync(int take, int skip)
     {
         await Task.Delay(50);
         return fakeContext.Skip(skip).Take(take);
     }
 
-    public async Task DeleteProduct(Guid productId)
+    public async Task<Product> GetProductAsync(Guid productId)
+    {
+        await Task.Delay(50);
+        var product = fakeContext.FirstOrDefault(x => x.Id == productId);
+        if (product is null)
+            throw new Exception("Product not found");
+        return product;
+    }
+
+    public async Task DeleteProductAsync(Guid productId)
     {
         await Task.Delay(50);
         var productToRemove = fakeContext.FirstOrDefault(x => x.Id == productId);

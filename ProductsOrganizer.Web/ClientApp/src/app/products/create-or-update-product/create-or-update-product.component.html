@@ -1,0 +1,36 @@
+<div>
+  <div [formGroup]="formGroup">
+    <mat-form-field appearance="fill">
+      <mat-label>Product code</mat-label>
+      <input matInput formControlName="code">
+      <mat-error *ngIf="formGroup.controls.code.hasError('required') && showErrors">Required</mat-error>
+      <mat-error *ngIf="(formGroup.controls.code.hasError('minlength') || formGroup.controls.code.hasError('maxlength')) && showErrors">
+        Must be 5 characters long</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title">
+      <mat-error *ngIf="formGroup.controls.name.hasError('required') && showErrors">Required</mat-error>
+      <mat-error *ngIf="(formGroup.controls.name.hasError('minlength') || formGroup.controls.name.hasError('maxlength')) && showErrors">
+        Must be 8 to 40 characters long
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+      <mat-error *ngIf="formGroup.controls.description.hasError('maxlength') && showErrors">
+        Must be less than 150 characters long
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Price</mat-label>
+      <input matInput formControlName="price" type="number">
+      <mat-error *ngIf="formGroup.controls.price.hasError('required') && showErrors">Required</mat-error>
+      <mat-error *ngIf="formGroup.controls.price.hasError('min') && showErrors">Must be greater or equal than 1$</mat-error>
+    </mat-form-field>
+  </div>
+  <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+</div>

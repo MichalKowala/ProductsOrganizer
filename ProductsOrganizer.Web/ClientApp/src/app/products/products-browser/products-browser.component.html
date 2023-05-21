@@ -23,9 +23,10 @@
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let product">
         <a (click)="removeProduct(product.id)">delete</a>
+        <a (click)="redirectToEditOrCreate(product.id)">edit</a>
       </td>
     </ng-container>
   </mat-table>
-  <button mat-raised-button color="primary">Create</button>
+  <button mat-raised-button color="primary" (click)="redirectToEditOrCreate()">Create</button>
 </div>
 

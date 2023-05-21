@@ -21,7 +21,7 @@ public class GetProductsHandler : IRequestHandler<GetProductsRequest, IEnumerabl
     
     public async Task<IEnumerable<ProductDto>> Handle(GetProductsRequest request, CancellationToken cancellationToken)
     {
-        var products = await productRepository.GetRange(request.Take, request.Skip);
+        var products = await productRepository.GetProductsAsync(request.Take, request.Skip);
         return products.Select(x => new ProductDto(x));
     }
 }

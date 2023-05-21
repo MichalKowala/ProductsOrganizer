@@ -3,6 +3,7 @@ import { Product } from 'src/app/model/product';
 import { ProductsService } from "../../service/products.service";
 import { ToastrService } from "ngx-toastr";
 import { catchError, EMPTY, switchMap, tap } from "rxjs";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-products-browser',
@@ -16,12 +17,13 @@ export class ProductsBrowserComponent implements OnInit {
   take: number = 10;
   constructor(
     private productsService: ProductsService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private router: Router
   ) {
   }
 
   ngOnInit(): void {
-    this.productsService.getRange(this.skip,this.take).subscribe({
+    this.productsService.getProducts(this.skip,this.take).subscribe({
       next: (products) => {
         this.products = products;
       },
@@ -33,7 +35,7 @@ export class ProductsBrowserComponent implements OnInit {
 
   removeProduct(productId: string) {
     if (confirm('Are you sure you want to delete this product?')) {
-      this.productsService.remove(productId).pipe(
+      this.productsService.deleteProduct(productId).pipe(
         catchError((err) => {
           this.toastrService.error('An error occured while trying to delete the product');
           return EMPTY;
@@ -41,12 +43,20 @@ export class ProductsBrowserComponent implements OnInit {
         tap(_ => {
           this.toastrService.success('Product has been deleted');
         }),
-        switchMap(_ => this.productsService.getRange(this.skip, this.take))
+        switchMap(_ => this.productsService.getProducts(this.skip, this.take))
       ).subscribe({
         next: (products) => {
           this.products = products;
         }
       })
+    }
+  }
+
+  redirectToEditOrCreate(productId?: string) {
+    if (productId) {
+      this.router.navigate(['products', productId, 'edit']);
+    } else {
+      this.router.navigate(['products', 'new']);
     }
   }
 }

@@ -2,6 +2,7 @@
 
 public interface IProductRepository
 {
-    Task<IEnumerable<Product>> GetRange(int take, int skip);
-    Task DeleteProduct(Guid productId);
+    Task<IEnumerable<Product>> GetProductsAsync(int take, int skip);
+    Task<Product> GetProductAsync(Guid productId);
+    Task DeleteProductAsync(Guid productId);
 }

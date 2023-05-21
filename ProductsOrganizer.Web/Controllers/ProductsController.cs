@@ -16,9 +16,16 @@ public class ProductsController : ControllerBase
     }
     
     [HttpGet]
-    public async Task<IActionResult> GetRange([FromQuery] int skip, [FromQuery] int take)
+    public async Task<IActionResult> GetProducts([FromQuery] int skip, [FromQuery] int take)
     {
         var result = await mediator.Send(new GetProductsRequest {Skip = skip, Take = take});
+        return Ok(result);
+    }
+
+    [HttpGet("{id:guid}")]
+    public async Task<IActionResult> GetProduct(Guid id)
+    {
+        var result = await mediator.Send(new GetProductRequest {Id = id});
         return Ok(result);
     }
 
