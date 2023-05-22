@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { ProductsBrowserComponent } from './products/products-browser/products-browser.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from "@angular/material/table";
@@ -26,7 +25,6 @@ const MATERIAL = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     ProductsBrowserComponent,
     CreateOrUpdateProductComponent
   ],
